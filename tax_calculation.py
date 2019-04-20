@@ -1,4 +1,4 @@
-class Totalmoney:
+class TotalMoney:
 
     def __init__(self, money):
         self.money = money
@@ -10,5 +10,5 @@ class Totalmoney:
 
 
 total_fee = int(input("合計金額を入力してください"))
-total_money = Totalmoney(total_fee)
+total_money = TotalMoney(total_fee)
 total_money.tax()
