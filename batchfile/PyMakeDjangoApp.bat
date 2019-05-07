@@ -31,7 +31,6 @@ cd templates
 mkdir %app%
 cd %app%
 type nul>index.html
-pip freeze
 call deactivate
 
 exit
