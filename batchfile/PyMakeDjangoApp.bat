@@ -1,32 +1,37 @@
 @echo off
 
+set virtual=myv
+set /P dir="new create dir name: "
+set /P project="new create project name: "
+set /P app="new create app name: "
 
 cd /d %~dp0
-mkdir StarrySky
-cd StarrySky
+mkdir %dir%
+cd %dir%
 
-python -m venv myv
+python -m venv %virtual%
 call myv\scripts\activate
 python -m pip install --upgrade pip
 pip install django
 
-django-admin startproject starrysky
-cd starrysky
-python manage.py startapp accounts
+django-admin startproject %project%
+cd %project%
+python manage.py startapp %app%
 mkdir templates
-cd accounts
+cd %app%
 type nul>urls.py
 mkdir static
 mkdir templates
 cd static
-mkdir accounts
-cd accounts
+mkdir %app%
+cd %app%
 type nul>style.css
 cd ../../
 cd templates
-mkdir accounts
-cd accounts
+mkdir %app%
+cd %app%
 type nul>index.html
+pip freeze
 call deactivate
 
 exit
