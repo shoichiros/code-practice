@@ -1,11 +1,10 @@
 import openpyxl
 
-# excel file load and sheetname load
-workbook = openpyxl.load_workbook("test.xlsx")
-sheetname = workbook.sheetnames[0]
-print(sheetname)
 
-# extraction sheet cell
-sheet = workbook[sheetname]
-cellvalue = sheet["A10"].value
-print(cellvalue)
+work_book = openpyxl.load_workbook("test.xlsx")
+sheet_name = work_book.sheetnames[0]
+print(sheet_name)
+
+sheet = work_book[sheet_name]
+cell_value = sheet["A10"].value
+print(cell_value)
